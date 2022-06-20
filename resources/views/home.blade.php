@@ -21,3 +21,8 @@
     </div>
 </div>
 @endsection
+@section('footer')
+<footer class="text-center py-6 mt-4">
+        Copyright &copy; 2022 Admin school
+    </footer>
+@endsection
