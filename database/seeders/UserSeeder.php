@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         User::insert([
             [
                 'id' => 1,
-                'nombre' => 'Jose Daniel',
+                'nombre' => 'Master',
                 'apellido_paterno' => 'De La Cruz',
                 'apellido_materno' => 'Rivera',
                 'telefono' => '7223491801',
@@ -29,6 +29,19 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('@daniel'),
                 'status' => 1,
                 'id_rol_sistema' => '1',
+            ],
+            [
+                'id' => 2,
+                'nombre' => 'Profesor',
+                'apellido_paterno' => 'De La Cruz',
+                'apellido_materno' => 'Rivera',
+                'telefono' => '7223491801',
+                'fecha_nacimiento' => '2000-08-29',
+                'sexo' => 'Masculino',
+                'email' => 'al221811690@gmail.com',
+                'password' => Hash::make('@daniel'),
+                'status' => 1,
+                'id_rol_sistema' => '2',
             ]
 
         ]);

@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//rutas traer tabs dependiendo el rol del usuario
+Route::get('/roles-usuario', [App\Http\Controllers\HomeController::class, 'rolesUsuario'])->name('rolesUsuario');
+//rutas director
+Route::resource('/ciclo-escolar', App\Http\Controllers\Director\CicloEscolarController::class);
