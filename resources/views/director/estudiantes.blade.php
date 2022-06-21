@@ -34,7 +34,7 @@
                         <tr>
                             <td class="p-2 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov"></div>
+                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://api.lorem.space/image/face?w=150&h=150" width="40" height="40" alt="Alex Shatov"></div>
                                     <div class="font-medium text-gray-800">{{$estudiantes->nombre_completo}}</div>
                                 </div>
                             </td>
@@ -48,17 +48,16 @@
                                 <div class="text-center">{{$estudiantes->telefono}}</div>
                             </td>
                             <td class="p-2 whitespace-nowrap">
-                                <button class="bg-green-600 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Mirar</button>
+                              <center><button class="bg-green-600 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Mirar</button></center>  
                                 <div x-data="{ modelOpen: false }">
-                                    <button @click="modelOpen =!modelOpen" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Editar</button>
+                                <center><button @click="modelOpen =!modelOpen" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Editar</button></center>  
                                     <div x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                                         <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
                                             <div x-cloak @click="modelOpen = false" x-show="modelOpen" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"></div>
 
                                             <div x-cloak x-show="modelOpen" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" class="inline-block w-full max-w-xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl">
                                                 <div class="flex items-center justify-between space-x-4">
-                                                    <h1 class="text-xl font-medium text-gray-800 ">Invite team memebr</h1>
-
+                                                    <h2 class="text-xl font-medium text-gray-800">Editar la información del estudiante {{$estudiantes->nombre}}</h2>
                                                     <button @click="modelOpen = false" class="text-gray-600 focus:outline-none hover:text-gray-700">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -67,56 +66,57 @@
                                                 </div>
 
                                                 <p class="mt-2 text-sm text-gray-500 ">
-                                                    Add your teammate to your team and start work to get things done
+                                                Datos
                                                 </p>
 
                                                 <form class="mt-5">
+                                                <h1 class="text-xs font-medium text-gray-400 uppercase">Personales</h1>
                                                     <div>
-                                                        <label for="user name" class="block text-sm text-gray-700 capitalize dark:text-gray-200">Teammate name</label>
-                                                        <input placeholder="Arthur Melo" value="{{$estudiantes->nombre}}" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                        <label for="user name" class="block text-sm text-black capitalize dark:text-gray-200">Matricula</label>
+                                                        <input placeholder="Apellido" value="{{$estudiantes->matricula}}" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
                                                     </div>
-
-                                                    <div class="mt-4">
-                                                        <label for="email" class="block text-sm text-gray-700 capitalize dark:text-gray-200">Teammate email</label>
-                                                        <input placeholder="arthurmelo@example.app" value="{{$estudiantes->email}}" type="email" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                    <div>
+                                                        <label for="user name" class="block text-sm text-black capitalize dark:text-gray-200">Nombre</label>
+                                                        <input placeholder="Nombre" value="{{$estudiantes->nombre}}" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
                                                     </div>
-
+                                                    <div>
+                                                        <label for="user name" class="block text-sm text-black capitalize dark:text-gray-200">Apellido Paterno</label>
+                                                        <input placeholder="Apellido" value="{{$estudiantes->apellido_paterno}}" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                    </div>
+                                                    <div>
+                                                        <label for="user name" class="block text-sm text-black capitalize dark:text-gray-200">Apellido Materno</label>
+                                                        <input placeholder="Apellido" value="{{$estudiantes->apellido_materno}}" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                    </div>
                                                     <div class="mt-4">
-                                                        <h1 class="text-xs font-medium text-gray-400 uppercase">Permissions</h1>
+                                                        <h1 class="text-xs font-medium text-gray-400 uppercase">Contacto</h1>
+
+                                                        <div class="mt-4">
+                                                            <label for="email" class="block text-sm text-black capitalize dark:text-gray-200">Correo Electronico</label>
+                                                            <input placeholder="arthurmelo@example.app" value="{{$estudiantes->email}}" type="email" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                        </div>
+                                                        <div class="mt-4">
+                                                            <label for="email" class="block text-sm text-black capitalize dark:text-gray-200">Telefono</label>
+                                                            <input placeholder="arthurmelo@example.app" value="{{$estudiantes->telefono}}" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <h1 class="text-xs font-medium text-gray-400 uppercase">Status</h1>
 
                                                         <div class="mt-4 space-y-5">
                                                             <div class="flex items-center space-x-3 cursor-pointer" x-data="{ show: true }" @click="show =!show">
-                                                                <div class="relative w-10 h-5 transition duration-200 ease-linear rounded-full" :class="[show ? 'bg-indigo-500' : 'bg-gray-300']">
-                                                                    <label for="show" @click="show =!show" class="absolute left-0 w-5 h-5 mb-2 transition duration-100 ease-linear transform bg-white border-2 rounded-full cursor-pointer" :class="[show ? 'translate-x-full border-indigo-500' : 'translate-x-0 border-gray-300']"></label>
+                                                                <div class="relative w-10 h-5 transition duration-200 ease-linear rounded-full" :class="[show ? 'bg-[#EC5252]' : 'bg-gray-300']">
+                                                                    <label for="show" @click="show =!show" class="absolute left-0 w-5 h-5 mb-2 transition duration-100 ease-linear transform bg-white border-2 rounded-full cursor-pointer" :class="[show ? 'translate-x-full border-[#EC5252]' : 'translate-x-0 border-gray-300']"></label>
                                                                     <input type="checkbox" name="show" class="hidden w-full h-full rounded-full appearance-none active:outline-none focus:outline-none" />
                                                                 </div>
 
-                                                                <p class="text-gray-500">Can make task</p>
-                                                            </div>
-
-                                                            <div class="flex items-center space-x-3 cursor-pointer" x-data="{ show: false }" @click="show =!show">
-                                                                <div class="relative w-10 h-5 transition duration-200 ease-linear rounded-full" :class="[show ? 'bg-indigo-500' : 'bg-gray-300']">
-                                                                    <label for="show" @click="show =!show" class="absolute left-0 w-5 h-5 mb-2 transition duration-100 ease-linear transform bg-white border-2 rounded-full cursor-pointer" :class="[show ? 'translate-x-full border-indigo-500' : 'translate-x-0 border-gray-300']"></label>
-                                                                    <input type="checkbox" name="show" class="hidden w-full h-full rounded-full appearance-none active:outline-none focus:outline-none" />
-                                                                </div>
-
-                                                                <p class="text-gray-500">Can delete task</p>
-                                                            </div>
-
-                                                            <div class="flex items-center space-x-3 cursor-pointer" x-data="{ show: true }" @click="show =!show">
-                                                                <div class="relative w-10 h-5 transition duration-200 ease-linear rounded-full" :class="[show ? 'bg-indigo-500' : 'bg-gray-300']">
-                                                                    <label for="show" @click="show =!show" class="absolute left-0 w-5 h-5 mb-2 transition duration-100 ease-linear transform bg-white border-2 rounded-full cursor-pointer" :class="[show ? 'translate-x-full border-indigo-500' : 'translate-x-0 border-gray-300']"></label>
-                                                                    <input type="checkbox" name="show" class="hidden w-full h-full rounded-full appearance-none active:outline-none focus:outline-none" />
-                                                                </div>
-
-                                                                <p class="text-gray-500">Can edit task</p>
+                                                                <p class="text-black">Activo</p>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="flex justify-end mt-6">
-                                                        <button type="button" class="px-3 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-500 rounded-md dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:bg-indigo-700 hover:bg-indigo-600 focus:outline-none focus:bg-indigo-500 focus:ring focus:ring-indigo-300 focus:ring-opacity-50">
-                                                            Invite Member
+                                                        <button type="button" class="px-3 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-[#EC5252] rounded-md dark:hover:bg-indigo-700 dark:focus:bg-indigo-700 hover:bg-indigo-600 focus:outline-none focus:bg-indigo-500 focus:ring focus:ring-indigo-300 focus:ring-opacity-50">
+                                                            Editar Estudiante
                                                         </button>
                                                     </div>
                                                 </form>
@@ -124,7 +124,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Eliminar</button>
+                                <center><button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Eliminar</button></center>
                             </td>
                         </tr>
                         @endforeach
