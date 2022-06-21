@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             //usuario administrador director
             [
                 'id' => 1,
-                'nombre' => 'Master',
+                'nombre' => 'Director',
                 'apellido_paterno' => 'De La Cruz',
                 'apellido_materno' => 'Rivera',
                 'telefono' => '7223491801',

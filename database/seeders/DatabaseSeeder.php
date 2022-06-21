@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             SalonSeeder::class,
             MaestroSeeder::class,
             EstudianteSeeder::class,
+            ClasesSeeder::class,
+            AlumnosClasesSeeder::class,
         ]);
     }
 }

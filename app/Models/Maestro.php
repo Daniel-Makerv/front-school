@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Maestro extends Model
 {
     protected $table = "maestros";
+    protected $primaryKey = 'id';
 
-    // protected $fillable = [];
+    protected $fillable = [ 
+        'id_usuario', 'id_salon','id_ciclo_escolar'
+
+    ];
 
     // public $timestamps = false;
 }

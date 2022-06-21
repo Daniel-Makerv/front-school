@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Grado extends Model
 {
     protected $table = "grados";
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'nombre_grado',
