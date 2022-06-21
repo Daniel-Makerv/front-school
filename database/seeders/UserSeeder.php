@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::insert([
+            //usuario administrador director
             [
                 'id' => 1,
                 'nombre' => 'Master',
@@ -28,8 +29,9 @@ class UserSeeder extends Seeder
                 'email' => 'danieldlcr5@gmail.com',
                 'password' => Hash::make('@daniel'),
                 'status' => 1,
-                'id_rol_sistema' => '1',
+                'id_rol_sistema' => 1,
             ],
+             //usuario profesor 
             [
                 'id' => 2,
                 'nombre' => 'Profesor',
@@ -41,7 +43,34 @@ class UserSeeder extends Seeder
                 'email' => 'al221811690@gmail.com',
                 'password' => Hash::make('@daniel'),
                 'status' => 1,
-                'id_rol_sistema' => '2',
+                'id_rol_sistema' => 2,
+            ],
+            //usuario estudiante 
+            [
+                'id' => 3,
+                'nombre' => 'miguel',
+                'apellido_paterno' => 'De La Cruz',
+                'apellido_materno' => 'Rivera',
+                'telefono' => '7223491801',
+                'fecha_nacimiento' => '2000-08-29',
+                'sexo' => 'Masculino',
+                'email' => 'miguel@gmail.com',
+                'password' => Hash::make('@daniel'),
+                'status' => 1,
+                'id_rol_sistema' => 3,
+            ],
+            [
+                'id' => 4,
+                'nombre' => 'Raul',
+                'apellido_paterno' => 'De La Cruz',
+                'apellido_materno' => 'Rivera',
+                'telefono' => '7223491801',
+                'fecha_nacimiento' => '2000-08-29',
+                'sexo' => 'Masculino',
+                'email' => 'raul@gmail.com',
+                'password' => Hash::make('@daniel'),
+                'status' => 1,
+                'id_rol_sistema' => 3,
             ]
 
         ]);

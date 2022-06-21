@@ -16,8 +16,9 @@ class CreateSalonesTable extends Migration
         Schema::create('salones', function (Blueprint $table) {
             $table->id();
             $table->string('nombre_salon');
-            $table->foreignId('id_grado')->constrained('grados','id');
-            $table->timestamps();
+            $table->foreignId('id_grado')->constrained('grados', 'id');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

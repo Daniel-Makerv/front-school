@@ -17,7 +17,8 @@ class CreateGradosTable extends Migration
             $table->id();
             $table->string('nombre_grado');
             $table->foreignId('id_ciclo_escolar')->constrained('ciclo_escolar','id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 

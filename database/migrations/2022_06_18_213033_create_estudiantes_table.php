@@ -20,7 +20,8 @@ class CreateEstudiantesTable extends Migration
             $table->foreignId('id_grado')->constrained('grados','id');
             $table->foreignId('id_salon')->constrained('salones','id');
             $table->foreignId('id_ciclo_escolar')->constrained('ciclo_escolar','id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
