@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Director;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Maestro;
 
 class MaestrosController extends Controller
 {
@@ -14,7 +15,10 @@ class MaestrosController extends Controller
      */
     public function index()
     {
-        return view('director.maestros');
+        $getMaestros = Maestro::query()
+        ->get()
+        ->append(['nombre_maestro', 'salon', 'ciclo_escolar']);
+        return view('director.maestros')->with(compact(['getMaestros']));
     }
 
     /**

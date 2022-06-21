@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Director;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Clase;
 
 class MateriasController extends Controller
 {
@@ -14,7 +15,10 @@ class MateriasController extends Controller
      */
     public function index()
     {
-        return view('director.materias');
+        $materias = Clase::query()
+        ->get()
+        ->append(['grado', 'salon']);
+        return view('director.materias')->with(compact(['materias']));
     }
 
     /**
