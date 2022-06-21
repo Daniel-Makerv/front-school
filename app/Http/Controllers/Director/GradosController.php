@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Director;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Grado;
 
 class GradosController extends Controller
 {
@@ -14,7 +15,10 @@ class GradosController extends Controller
      */
     public function index()
     {
-        return view ('director.gradosEscolares');
+      $grado = Grado::query()
+          ->get()
+          ->append(['ciclo_escolar']);
+        return view ('director.gradosEscolares')->with(compact(['grado']));
     }
 
     /**

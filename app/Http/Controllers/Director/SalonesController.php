@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Director;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Salon;
 
 class SalonesController extends Controller
 {
@@ -14,7 +15,10 @@ class SalonesController extends Controller
      */
     public function index()
     {
-        return view('director.salones');
+      $salones = Salon::query()
+          ->get()
+          ->append(['grado']);
+        return view('director.salones')->with(compact(['salones']));
     }
 
     /**

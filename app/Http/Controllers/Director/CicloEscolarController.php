@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Director;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CicloEscolar;
 
 class CicloEscolarController extends Controller
 {
@@ -13,7 +14,9 @@ class CicloEscolarController extends Controller
      */
     public function index()
     {
-        return view('director.ciclo-escolar');
+      $cicloEscolar = CicloEscolar::query()
+          ->get();
+        return view('director.ciclo-escolar')->with(compact(['cicloEscolar']));
     }
 
     /**
@@ -68,7 +71,16 @@ class CicloEscolarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $datosCicloEscolar = request()->except(['_token', '_method']);
+       CicloEscolar::where('id','=',$id)->update($datosCicloEscolar);
+       $ciclo_escolar = CicloEscolar::findOrFail($id);
+       $datos['ciclo_escolar']=CicloEscolar::all();
+       $consulta['ciclo_escolar'] = CicloEscolar::withTrashed()
+       ->select(
+         'ciclo_escolar.id',
+         'ciclo_escolar.inicio_ciclo',
+         'ciclo_escolar.fin_ciclo')->get();
+        return view('director.ciclo-escolar')->with($datos)->with($consulta);
     }
 
     /**

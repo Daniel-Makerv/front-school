@@ -13,5 +13,11 @@ class Salon extends Model
         'nombre_salon', 'id_grado'
     ];
 
-    // public $timestamps = false;
+    public function getGradoAttribute()
+    {
+      $consulta = Grado::query()
+      ->where('id',$this->id_grado)
+      ->first();
+      return $consulta->nombre_grado;
+    }
 }
