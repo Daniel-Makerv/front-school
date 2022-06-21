@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tabs;
+use App\Models\Estudiante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,5 +35,13 @@ class HomeController extends Controller
             ->where('id_rol', $authId)
             ->get();
         return response()->json(['rolesUsuario' => $rolesUsuario]);
+    }
+
+    public function countAlumnos()
+    {
+        $estudiantes = Estudiante::query()
+            ->get()
+            ->count();
+        return response()->json(['estudiantes' => $estudiantes]);
     }
 }

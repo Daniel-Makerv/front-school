@@ -24,6 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //rutas traer tabs dependiendo el rol del usuario
 Route::get('/roles-usuario', [App\Http\Controllers\HomeController::class, 'rolesUsuario'])->name('rolesUsuario');
+Route::get('/total-alumnos', [App\Http\Controllers\HomeController::class, 'countAlumnos'])->name('countAlumnos');
+
 //rutas director
 Route::resource('/ciclo-escolar', App\Http\Controllers\Director\CicloEscolarController::class);
 Route::resource('/estudiantes', App\Http\Controllers\Director\EstudiantesController::class);
