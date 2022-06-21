@@ -101,11 +101,4 @@
 
     });
 </script>
-
 </html>
-<!-- 
-
-$("#guardar").on("click",function(event){
-event.preventDefault();
-// resto de tu codigo
-}); -->
