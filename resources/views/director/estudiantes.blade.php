@@ -45,10 +45,10 @@
                                 <div class="text-left font-medium text-green-500">{{$estudiantes->grado}}</div>
                             </td>
                             <td class="p-2 whitespace-nowrap">
-                                <div class="text-center">{{$estudiantes->ciclo_escolar}}</div>
+                                <div class="text-center">{{$estudiantes->telefono}}</div>
                             </td>
                             <td class="p-2 whitespace-nowrap">
-                                <button @click="modelOpen =!modelOpen" class="bg-green-600 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Mirar</button>
+                                <button class="bg-green-600 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Mirar</button>
                                 <div x-data="{ modelOpen: false }">
                                     <button @click="modelOpen =!modelOpen" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Editar</button>
                                     <div x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -73,12 +73,12 @@
                                                 <form class="mt-5">
                                                     <div>
                                                         <label for="user name" class="block text-sm text-gray-700 capitalize dark:text-gray-200">Teammate name</label>
-                                                        <input placeholder="Arthur Melo" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                        <input placeholder="Arthur Melo" value="{{$estudiantes->nombre}}" type="text" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
                                                     </div>
 
                                                     <div class="mt-4">
                                                         <label for="email" class="block text-sm text-gray-700 capitalize dark:text-gray-200">Teammate email</label>
-                                                        <input placeholder="arthurmelo@example.app" type="email" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                        <input placeholder="arthurmelo@example.app" value="{{$estudiantes->email}}" type="email" class="block w-full px-3 py-2 mt-2 text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
                                                     </div>
 
                                                     <div class="mt-4">
