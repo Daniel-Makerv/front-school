@@ -27,3 +27,9 @@ Route::get('/roles-usuario', [App\Http\Controllers\HomeController::class, 'roles
 //rutas director
 Route::resource('/ciclo-escolar', App\Http\Controllers\Director\CicloEscolarController::class);
 Route::resource('/estudiantes', App\Http\Controllers\Director\EstudiantesController::class);
+Route::resource('/grados', App\Http\Controllers\Director\GradosController::class);
+Route::resource('/salones', App\Http\Controllers\Director\SalonesController::class);
+Route::resource('/materias', App\Http\Controllers\Director\MateriasController::class);
+Route::resource('/calificaciones', App\Http\Controllers\Director\CalificacionesController::class);
+Route::resource('/maestros', App\Http\Controllers\Director\MaestrosController::class);
+

@@ -48,7 +48,7 @@
                                 <div class="text-center">{{$estudiantes->telefono}}</div>
                             </td>
                             <td class="p-2 whitespace-nowrap">
-                              <center><button class="bg-green-600 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Mirar</button></center>  
+                              <center><button class="bg-green-600 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Expediente</button></center>  
                                 <div x-data="{ modelOpen: false }">
                                 <center><button @click="modelOpen =!modelOpen" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Editar</button></center>  
                                     <div x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
