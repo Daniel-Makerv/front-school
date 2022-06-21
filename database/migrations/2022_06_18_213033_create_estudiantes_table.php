@@ -17,8 +17,8 @@ class CreateEstudiantesTable extends Migration
             $table->id();
             $table->foreignId('id_usuario')->constrained('users','id');
             $table->string('matricula');
-            $table->foreignId('id_grado')->constrained('grados','id');
-            $table->foreignId('id_salon')->constrained('salones','id');
+            $table->string('grado');
+            $table->string('salon');
             $table->foreignId('id_ciclo_escolar')->constrained('ciclo_escolar','id');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

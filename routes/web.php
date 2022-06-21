@@ -26,3 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/roles-usuario', [App\Http\Controllers\HomeController::class, 'rolesUsuario'])->name('rolesUsuario');
 //rutas director
 Route::resource('/ciclo-escolar', App\Http\Controllers\Director\CicloEscolarController::class);
+Route::resource('/estudiantes', App\Http\Controllers\Director\EstudiantesController::class);

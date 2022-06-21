@@ -25,6 +25,11 @@ class CicloEscolarSeeder extends Seeder
                 'inicio_ciclo' => '2015-06-20',
                 'fin_ciclo' => '2018-06-20',
             ],
+            [
+                'id' => 3,
+                'inicio_ciclo' => '2022-06-20',
+                'fin_ciclo' => '2025-06-20',
+            ],
         ]);
     }
 }

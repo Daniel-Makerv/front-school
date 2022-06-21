@@ -22,12 +22,12 @@ class SalonSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'nombre_salon' => 'A',
+                'nombre_salon' => 'B',
                 'id_grado' => 1,
             ],
             [
                 'id' => 3,
-                'nombre_salon' => 'A',
+                'nombre_salon' => 'C',
                 'id_grado' => 1,
             ],
         ]);

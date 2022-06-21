@@ -15,4 +15,8 @@ class Grado extends Model
     ];
 
     // public $timestamps = false;
+  
+    public function Estudiante(){
+        return $this->belongsTo('App\Models\Estudiante', 'id_grado');
+    }
 }

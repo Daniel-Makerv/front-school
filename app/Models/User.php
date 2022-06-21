@@ -44,4 +44,41 @@ class User extends Authenticatable
     {
         return $this->hasOne(RolesSistema::class, 'id', 'id_rol_sistema');
     }
+
+    public function getNombreCompletoAttribute()
+    {
+
+        return "{$this->apellido_paterno} {$this->apellido_materno} {$this->nombre}";
+    }
+
+    public function getMatriculaAttribute()
+    {
+        if ($this->id_rol_sistema == 3) {
+            $matricula = Estudiante::query()
+                ->where('id_usuario', $this->id)
+                ->first();
+        }
+        return $matricula->matricula;
+    }
+    public function getGradoAttribute()
+    {
+        $grado = Estudiante::query()
+            ->where('id_usuario', $this->id)
+            ->first();
+
+        return $grado->grado . '-' . $grado->salon;
+    }
+    public function getCicloEscolarAttribute()
+    {
+        $getEstudiante = Estudiante::query()
+            ->where('id_usuario', $this->id)
+            ->first();
+        $getCicloEscolar = CicloEscolar::query()
+            ->where('id', $getEstudiante->pluck('id_ciclo_escolar'))
+            ->first();
+
+        $inicio_ciclo = explode("-", $getCicloEscolar->inicio_ciclo);
+        $fin_ciclo = explode("-", $getCicloEscolar->fin_ciclo);
+        return $inicio_ciclo[0] . '-' . $fin_ciclo[0];
+    }
 }
